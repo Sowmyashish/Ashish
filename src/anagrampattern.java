@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created by ashishsowmya on 4/21/18.
+ * anagram pattern check
  */
 public class anagrampattern {
 
