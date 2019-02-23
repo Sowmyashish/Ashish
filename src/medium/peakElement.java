@@ -41,7 +41,7 @@ public class peakElement
     public static void main(String args[])
     {
         peakElement obj = new peakElement();
-        int a[] = {1,3,20,10,5,2,1};
+        int a[] = {1,2,3,4,5,3};
         int result =obj.index(a);
         System.out.println(result);
     }

@@ -11,12 +11,9 @@ public class rotateImage {
 //find the code in transpose of a matrix in general category
 
 
-    public void print(int a[][])
-    {
-        for(int i=0;i<2;i++)
-        {
-            for(int j=0;j<2;j++)
-            {
+    public void print(int a[][]) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 System.out.print(a[i][j]);
                 System.out.print("\t");
             }
@@ -26,45 +23,46 @@ public class rotateImage {
     }
 
 
+    public void rotate(int[][] a) {
 
-//    public void rotate(int[][] a)
-//    {
-//        int current_row=0;
-//        int current_colum =0;
-//        int top_left = a[current_row][current_colum];
-//        int last_column=a[0].length-1;
-//        int top_right = a[current_row][last_column];
-//        int last_row = a.length-1;
-//        int bottom_right = a[last_row][last_column];
-//        int bottom_left = a[last_row][current_colum];
+        int last_row = a.length - 1;
+        for (int i = 0; i < last_row; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                if (i == last_row || i > last_row) {
+                    break;
+                } else {
+                    int temp = a[i][j];
+                    a[i][j] = a[last_row][j];
+                    a[last_row][j] = temp;
+                }
+            }
+            last_row--;
 
-//    }
+        }
 
+//transpose of a matrix
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                int temp = a[i][j];
+                a[i][j] = a[j][i];
+                a[j][i] = temp;
 
-    public static void main(String args[])
-    {
-        int Matrix_Size=2;
-        int a[][] = new int[Matrix_Size][Matrix_Size];
-        int count=0;
-        int last = Matrix_Size-1;
-        for(int i=0;i<a.length;i++)
-        {
-            for(int j=0;j<a.length;j++)
-            {
-                a[i][j] =count++;
             }
         }
-        rotateImage obj = new rotateImage();
-       // System.out.println(Arrays.deepToString(a));
-        System.out.println("Old Matrix");
-       obj.print(a);
-        System.out.println("New Matrix");
-        for(int i=0;i<last;i++)
-        {
 
-        }
     }
 
 
-    //https://www.youtube.com/watch?v=Jtu6dJ0Cb94
+    public static void main(String args[]) {
+        int[][] a = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
+        rotateImage obj = new rotateImage();
+        obj.rotate(a);
+        obj.print(a);
+
+        //https://www.youtube.com/watch?v=Jtu6dJ0Cb94
+    }
 }

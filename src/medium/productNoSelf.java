@@ -76,7 +76,7 @@ public int[] product(int[] nums)
     public static void main(String args[])
     {
 
-        int a[] = {2,3,4,1};
+        int a[] = {1,2,3,4};
         productNoSelf obj = new productNoSelf();
        int[] result= obj.product(a);
        for(int num = 0;num<result.length;num++)
