@@ -24,11 +24,43 @@ public class uniqueMorseCode {
         return example;
     }
 
+
+
+    public int morse1(String[] str)
+    {
+        HashMap<String,Integer> map = new HashMap<>();
+        String[] s= new String[]{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        //a-1,b-2,c-3
+
+
+        for(String str1: str)
+        {
+            String example="";
+            for(int i=0;i<str1.length();i++)
+            {
+                int result = (str1.charAt(i)-'a');
+                example = example+s[result];
+            }
+            if(!map.containsKey(example))
+            {
+                map.put(example,1);
+            }
+            else
+            {
+              int count=  map.get(example);
+              map.put(example,count+1);
+            }
+
+        }
+
+        return map.size();
+    }
+
     public static void main(String args[])
     {
-        String str = "aaa";
+        String[] str = {"gin", "zen", "gig", "msg"};
         uniqueMorseCode obj = new uniqueMorseCode();
-      String result=    obj.morse(str);
+      int result=    obj.morse1(str);
         System.out.println(result);
 
     }
