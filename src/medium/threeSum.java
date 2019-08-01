@@ -1,27 +1,23 @@
 package medium;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by ashishsowmya on 10/8/18.
  */
 public class threeSum {
 
-    public void three(int[] nums)
+    public List<List<Integer>>  three(int[] nums)
     {
-        HashMap<Integer,Integer> map = new HashMap<>();
+        Set<Integer> map = new HashSet<>();
         List<Integer> li = new LinkedList<>();
+        List<List<Integer>> list = new LinkedList<>();
 
         for(int i=0;i<nums.length;i++)
         {
-            if(!map.containsKey(nums[i]))
-            {
-                map.put(nums[i],i);
-            }
+
+                map.add(nums[i]);
 
         }
 
@@ -33,16 +29,23 @@ public class threeSum {
                 {
                     int k = nums[i] + nums[j];
                     int temp = (-1)*k;
-                    if(map.containsKey(temp))
+                    if(map.contains(temp))
                     {
                         li.add(nums[i]);
                         li.add(nums[j]);
                         li.add(temp);
+                       // map.remove(2);
                     }
+                    if(!list.contains(li))
+                    {
+                        list.add(li);
+                    }
+
 
                 }
             }
         }
+        return list;
     }
 
 
@@ -97,8 +100,9 @@ public class threeSum {
 
     public static void main(String args[])
     {
-        int a[]={-1,0,1,2,-1,-4};
+        int a[]={-1,-1,0,1,2,4};
+                //{-1,0,1,2,-1,-4};
         threeSum obj = new threeSum();
-        obj.three(a);
+        obj.Threesum(a);
     }
 }

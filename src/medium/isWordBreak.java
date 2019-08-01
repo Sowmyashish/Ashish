@@ -56,8 +56,10 @@ public class isWordBreak {
         isWordBreak obj = new isWordBreak();
         Set<String> set = new LinkedHashSet<>();
         set.add("leet");
-      //  set.add("t");
         set.add("code");
+//        set.add("sand");
+//        set.add("and");
+//        set.add("cat");
         boolean result=    obj.wordBreak1("leetcode",set);
         System.out.println(result);
     }

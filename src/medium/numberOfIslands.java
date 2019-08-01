@@ -42,14 +42,14 @@ public class numberOfIslands {
     public static void main(String args[])
     {
         numberOfIslands obj = new numberOfIslands();
-//        char[][] board={
-//                       { '1','1','0','0'},
-//                        {'0','0','0','0'},
-//                        {'0','0','1','1'},
-//                        {'0','0','0','0'}
-//                         };
+        char[][] board={
+                       { '1','1','0','0'},
+                        {'0','0','0','0'},
+                        {'0','0','1','1'},
+                        {'0','0','0','0'}
+                         };
 
-        char[][] board = {};
+     //   char[][] board = {};
         int result=obj.islands(board);
         System.out.println(result);
     }

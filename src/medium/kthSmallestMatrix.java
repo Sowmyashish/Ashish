@@ -1,5 +1,8 @@
 package medium;
 
+import javax.swing.text.html.HTMLDocument;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 /**
@@ -34,16 +37,40 @@ public class kthSmallestMatrix {
         return result;
     }
 
+
+    public int kthsmallest(int[][] matrix,int k) {
+
+       PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix[0].length;j++)
+            {
+                pq.add(matrix[i][j]);
+            }
+        }
+        int result=0;
+        while(k>0)
+        {
+
+           // System.out.print(pq.poll() + " ");
+            result = pq.poll();
+            k--;
+
+        }
+        return result;
+    }
+
     public static void main(String args[])
     {
         kthSmallestMatrix obj = new kthSmallestMatrix();
         int[][] array ={
-                {3,5,7},
-                {8,9,10},
-                {14,16,19}
+                {1,5,9},
+                {6,11,13},
+                {12,13,15}
         };
 
-      int result=  obj.ksmallest(array,8);
+     int result= obj.kthsmallest(array,8);
         System.out.println(result);
+
     }
 }

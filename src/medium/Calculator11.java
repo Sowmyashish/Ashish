@@ -47,7 +47,7 @@ public class Calculator11
 
     public static void main(String args[])
     {
-        String str = "3-2*2";
+        String str = "3+2*2";
         Calculator11 obj = new Calculator11();
       int result =   obj.calculate(str);
         System.out.println(result);

@@ -52,8 +52,8 @@ return result;
     public static void main(String args[])
     {
         duplicateNumber obj = new duplicateNumber();
-        int a[] = {1,5,3,5,6,8,7};
-       int result= obj.duplicate(a);
+        int a[] = {1,2,3,2,4};
+       int result= obj.duplicate1(a);
         System.out.println(result);
     }
 }

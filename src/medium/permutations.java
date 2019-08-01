@@ -6,28 +6,34 @@ import java.util.*;
  */
 public class permutations {
 
-    public List<List<Integer>> subsets(int[] nums) {
+    public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
-        Arrays.sort(nums);
-        backtrack(list, new ArrayList<>(), nums, 0);
+        // Arrays.sort(nums); // not necessary
+        backtrack(list, new ArrayList<>(), nums);
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
-        list.add(new ArrayList<>(tempList));
-        for(int i = start; i < nums.length; i++){
-            tempList.add(nums[i]);
-            backtrack(list, tempList, nums, i + 1);
-            tempList.remove(tempList.size() - 1);
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums) {
+        if (tempList.size() == nums.length) {
+            list.add(new ArrayList<>(tempList));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                if (tempList.contains(nums[i]))
+                    continue; // element already exists, skip
+                tempList.add(nums[i]);
+                backtrack(list, tempList, nums);
+                tempList.remove(tempList.size() - 1);
+            }
         }
     }
+
 
 
     public static void main(String args[])
     {
         permutations obj = new permutations();
         int a[]={1,2,3};
-        List<List<Integer>> li = obj.subsets(a);
+        List<List<Integer>> li = obj.permute(a);
         for(int i=0;i<li.size();i++)
         {
             System.out.println(li.get(i));

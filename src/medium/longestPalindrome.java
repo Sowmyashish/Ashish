@@ -5,30 +5,29 @@ package medium;
  */
 public class longestPalindrome {
 
-//     public String longestPalindrome(String s)
-//     {
-//            for(int i=0;i<s.length()-1;i++)
-//            {
-//                for(int j=s.length()-1;j>0;j--)
-//                {
-//                    if(s.charAt(i) == s.charAt(j) )
-//                    {
-//                            i++;
-//                            j--;
-//
-//                    }
-//                    else
-//                    {
-//                        j--;
-//                    }
-//                }
-//            }
-//     }
+     public String longestPalindrome(String s)
+     {
+          String result = "";
+          int len = 0;
+          boolean[][] isPali = new boolean[s.length()][s.length()];
+          for (int i = s.length() - 1; i >= 0; i--) {
+               for (int j = i; j < s.length(); j++) {
+                    if (s.charAt(i) == s.charAt(j) && (j - i < 2 || isPali[i + 1][j - 1])) {
+                         isPali[i][j] = true;
+                         if (j - i + 1 > len) {
+                              result = s.substring(i, j + 1);
+                              len = j - i + 1;
+                         }
+                    }
+               }
+          }
+          return result;
+     }
 
      public static void main(String args[])
      {
-//         longestPalindrome obj = new longestPalindrome();
-//         String str ="babad";
-//         String result = obj.longestPalindrome(str);
+         longestPalindrome obj = new longestPalindrome();
+         String str ="babad";
+         String result = obj.longestPalindrome(str);
      }
 }

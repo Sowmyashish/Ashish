@@ -165,6 +165,28 @@ public class oddEvenLL {
         return head;
     }
 
+    public Node rotateRight(Node head,int k)
+    {
+        Node slow = head;
+        Node fast = head;
+        int count =0;
+        while(count < k && fast != null)
+        {
+            fast = fast.next;
+            count++;
+        }
+        while(fast.next != null)
+        {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        Node newhead = slow.next;
+        slow.next = null;
+        fast.next = head;
+        head = newhead;
+        return head;
+    }
+
 
     public static void main(String args[])
     {
@@ -176,7 +198,9 @@ public class oddEvenLL {
         obj.insert(5);
         obj.insert(6);
 
-        obj.oddeven(obj.head);
+       // obj.oddeven(obj.head);
+        Node node = obj.rotateRight(obj.head,2);
+
 
         obj.print();
     }

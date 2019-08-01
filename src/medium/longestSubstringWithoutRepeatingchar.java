@@ -34,7 +34,7 @@ public class longestSubstringWithoutRepeatingchar {
     public static void main(String args[])
     {
         longestSubstringWithoutRepeatingchar obj = new longestSubstringWithoutRepeatingchar();
-        int result = obj.substring("abcbbc");
+        int result = obj.substring("pwwkew");
         System.out.println(result);
     }
 

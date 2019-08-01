@@ -51,10 +51,15 @@ public class gameoflife {
 
     public static void main(String args[])
     {
-        int a[][] = {
-
-
+        int a[][] = { {0,1,0},
+                {0,0,1},
+                {1,1,1},
+                {0,0,0}
                      };
+
+        gameoflife obj = new gameoflife();
+        obj.gameOfLife(a);
+
 
     }
 }

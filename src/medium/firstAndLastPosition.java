@@ -141,8 +141,8 @@ public class firstAndLastPosition {
     public static void main(String args[])
     {
         firstAndLastPosition obj = new firstAndLastPosition();
-        int[] a= {1};
-        int target=1;
+        int[] a= {4,4,4,4,5,6,7,8,9};
+        int target=4;
         int[] index= obj.find(a,target);
         System.out.println(target+"is at index "+index[0]);
         System.out.println(target+"is at index "+index[1]);

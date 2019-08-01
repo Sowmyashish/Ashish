@@ -56,7 +56,7 @@ return sb.toString();
     public static void main(String args[])
     {
         fractionToRecurringSelf obj = new fractionToRecurringSelf();
-        int numerator = -28;
+        int numerator = 2;
         int denominator = 3;
        String result= obj.fractionToDecimal(numerator,denominator);
         System.out.println(result);

@@ -82,18 +82,108 @@ public class wordLadder {
     }
 
 
+    public int ladder(String beginWord, String endWord, List<String> wordList)
+    {
+        Set<String> set = new HashSet<>(wordList);
+        int level =1;
+        Queue<String> list = new LinkedList<>();
+        list.add(beginWord);
+
+        while(!list.isEmpty())
+        {
+            int size = list.size();
+            for(int q=0;q<size;q++)
+            {
+                char[] charArray= list.poll().toCharArray();
+
+
+                for(int i=0;i<charArray.length;i++)
+                {
+                    char temp = charArray[i];
+                    for(char ch='a';ch <= 'z';ch++)
+                    {
+                        charArray[i] = ch;
+                        String newString = new String(charArray);
+                        if(set.contains(newString))
+                        {
+                            if(newString.equals(endWord))
+                            {
+                                return level+1;
+                            }
+                            set.remove(newString);
+                            list.add(newString);
+                        }
+                    }
+                    charArray[i] = temp;
+                }
+            }
+            level++;
+        }
+
+return 0;
+
+
+
+
+    }
+
+
+
+    public int ladderLength2(String beginWord, String endWord, List<String> wordList)
+    {
+        Set<String> dict = new HashSet<>(wordList);
+        Queue<String> queue = new LinkedList<>();
+        queue.add(beginWord);
+        int level =1;
+        while(!queue.isEmpty())
+        {
+            int size = queue.size();
+            for(int q=0;q<size;q++)
+            {
+                char[] cur  = queue.poll().toCharArray();
+                for(int i=0;i<cur.length;i++)
+                {
+                    char temp = cur[i];
+                    for(char chr='a';chr<='z';chr++)
+                    {
+                        cur[i] = chr;
+                        String new_string=new String(cur);
+                        if(dict.contains(new_string))
+                        {
+                            if(new_string.equals(endWord))
+                            {
+                                return level+1;
+                            }
+                            queue.add(new_string);
+                            dict.remove(new_string);
+                        }
+
+                    }
+                    cur[i] = temp;
+
+                }
+            }
+            level++;
+        }
+
+        return 0;
+    }
+
+
+
+
 
     public static void main(String args[])
     {
         List<String> li = new LinkedList<>();
-        li.add("hot");
+        li.add("hop");
         li.add("dot");
         li.add("dog");
         li.add("lot");
         li.add("log");
-        li.add("cog");
+       // li.add("cog");
         wordLadder obj = new wordLadder();
-      int result=  obj.ladderLength1("hit","cog",li);
+      int result=  obj.ladderLength2("hit","cog",li);
         System.out.println(result);
     }
 }
