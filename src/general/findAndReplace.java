@@ -27,7 +27,7 @@ public class findAndReplace
         {
             char w = word.charAt(i);
             char p = pattern.charAt(i);
-            if(!wordMap.containsKey(w)) //it is saved as ith character from the word -> ith characer from the patterm
+            if(!wordMap.containsKey(w)) //it is saved as ith character from the word -> ith character from the pattern
             {
                 wordMap.put(w,p);
             }
