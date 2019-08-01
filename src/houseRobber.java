@@ -23,6 +23,29 @@ public class houseRobber {
         }
     }
 
+    public int robbery2(int[] nums,int n)
+    {
+
+            int[] new_array = new int[nums.length];
+            if(nums.length == 0)
+                return 0;
+            else if(nums.length == 1)
+                return nums[0];
+            else if(nums.length ==2)
+                return Math.max(nums[0],nums[1]);
+
+            else
+            {
+
+                new_array[0] = nums[0];
+                new_array[1] = Math.max(nums[0],nums[1]);
+                for(int i=2;i<nums.length;i++)
+                {
+                    new_array[i] = Math.max(nums[i]+new_array[i-2],new_array[i-1]);
+                }
+            }
+            return new_array[nums.length-1];
+        }
 
 
 
@@ -30,7 +53,7 @@ public class houseRobber {
     {
         houseRobber obj = new houseRobber();
         int[] a ={1,8,2,6,4,5};
-       obj.robbery1(a);
+        obj.robbery2(a,a.length);
        // System.out.println(res);
 
     }

@@ -7,6 +7,8 @@ import java.util.*;
 
 
 public class fizzBuzz {
+    int i=0;
+    List<String> list = new LinkedList<>();
     public void calculate(int num)
 
     {
@@ -59,10 +61,26 @@ public class fizzBuzz {
         return li;
     }
 
+
+    public List<String> fizzBuzzRecursion(int n)
+    {
+         i++;
+         if( i %3 == 0 && i%5 ==0) list.add("fizzbuzz");
+         else if(i%5 ==0 ) list.add("buzz");
+         else if(i%3 ==0) list.add("fizz");
+         else list.add(String.valueOf(i));
+         if(i < n) fizzBuzzRecursion(n);
+
+     return list;
+    }
+
     public static void main(String args[])
     {
         fizzBuzz obj = new fizzBuzz();
-        obj.calculate(15);
+       List<String> list=obj.fizzBuzzRecursion(15);
+       for(int i=0;i<list.size();i++)
+           System.out.println(list.get(i));
+
     }
 
 }

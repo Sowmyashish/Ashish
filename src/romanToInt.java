@@ -70,7 +70,7 @@ public class romanToInt {
     public static void main(String args[])
     {
         romanToInt obj = new romanToInt();
-      int result=  obj.roman1("XIX");
+      int result=  obj.roman1("MCMXCIV");
         System.out.println(result);
     }
 }

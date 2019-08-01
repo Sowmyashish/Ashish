@@ -104,9 +104,9 @@ public String lcp(String[] str)
     public static void main(String args[])
     {
         String[] str = new String[3];
-        str[0]="crrogd";
-        str[1]="crrcgd";
-        str[2]="crrrgd";
+        str[0]="a";
+        str[1]="b";
+        str[2]="c";
 
         longestCommonPrefix obj = new longestCommonPrefix();
         obj.lcp(str);

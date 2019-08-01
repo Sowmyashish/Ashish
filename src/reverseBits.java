@@ -21,15 +21,13 @@ public class reverseBits {
     public int reverse1(long n)
     {
         int result = 0;
-        for (int i = 0; i < 31; i++) {
-            result <<= 1;
-            if ((n & 1) == 1)
-                result++;
-            n >>= 1;
+        for (int i = 0; i < 32; i++) {
+            result += n & 1;
+            n >>>= 1;   // CATCH: must do unsigned shift
+            if (i < 31) // CATCH: for last digit, don't shift!
+                result <<= 1;
         }
         return result;
-
-
     }
 
     public static void main(String args[])
@@ -37,8 +35,8 @@ public class reverseBits {
 
         reverseBits obj = new reverseBits();
        // long a=  Long.parseUnsignedLong("2147483648") ;
-       long a= Long.parseUnsignedLong("3");
-       int  result= obj.reverse1(a);
+       //long a= Long.parseUnsignedLong("011");
+       int  result= obj.reverse1(1);
         System.out.println(result);
     }
 }

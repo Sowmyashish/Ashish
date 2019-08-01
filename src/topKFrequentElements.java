@@ -128,7 +128,7 @@ public class topKFrequentElements {
     public static void main(String args[])
 {
     topKFrequentElements obj = new topKFrequentElements();
-    int a[]={1,2};
+    int a[]={1,1,1,2,2,3};
     int k =2;
   // List list= obj.topK(a,k);
     List list = obj.topKFrequenttest(a,k);

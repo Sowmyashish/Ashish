@@ -94,7 +94,7 @@ public class buyAndSell1 {
 //        }
 //        return  max ;
     }
-    public static void main(String args[])
+     static public void main(String args[])
     {
         buyAndSell1 obj = new buyAndSell1();
         int[] a= {8,4,1,2,6,4};

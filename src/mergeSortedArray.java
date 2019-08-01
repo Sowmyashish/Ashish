@@ -25,7 +25,7 @@ public class mergeSortedArray {
     public static void main(String args[])
     {
         mergeSortedArray obj = new mergeSortedArray();
-        int[] A = {1,2,3,0,0,0};
+        int[] A = {1,2,5,0,0,0};
         int[] B = {2,3,4};
         obj.merge(A,3,B,3);
         for(int i=0;i<A.length;i++)
