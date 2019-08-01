@@ -44,7 +44,7 @@ public class missingPositive {
     {
         if(A.length == 0)return 1;
         int temp=0;
-        int range = range(A) +1;
+        int range = range(A)+1 ;
         int missing = range;
         for(int i =0;i<range;i++)
         {
@@ -54,7 +54,7 @@ public class missingPositive {
                 A[temp-1] = (A[temp-1] <0)?A[temp-1]:-A[temp-1];
             }
         }
-        for(int j=0;j<range;j++)
+        for(int j=0;j<=range;j++)
         {
             if(A[j] > 0)
             {
@@ -74,7 +74,8 @@ public class missingPositive {
             if(A[i] >0)
             {
                  currentPointer++;
-                swap(A,currentPointer,i);
+              //   A[currentPointer] = A[i];
+               swap(A,currentPointer,i);
             }
         }
 
@@ -94,7 +95,8 @@ public class missingPositive {
     public static void main(String args[])
     {
         missingPositive obj = new missingPositive();
-        int[] a = {1,3,2,5,-3,8,-5,-6,6};
+       // int[] a = {1,3,2,5,-3,8,-5,-6,6};
+        int[] a ={1,3,0,2,4,-5,-6};
         int result = obj.firstMissing(a);
         System.out.println(result);
     }
